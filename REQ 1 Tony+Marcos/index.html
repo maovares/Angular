@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="AngularTest">
+<head>
+	<meta charset="utf-8">
+	<title>New Request</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="angular.min.js" ></script>
+	<script src="angular-local-storage.min.js" ></script>
+	<script src="controller.js" ></script>
+	
+</head>
+<body >
+	<div ng-show ="showReqForm" ng-controller = "RequestController" id="divReqForm" class="request" >
+		<img src="http://www.tec.ac.cr/PublishingImages/LogoTEC_home.jpg" class="center"> <a href="#"><div class="div-logout">Logout</div></a> <br> 
+		<h1 >New request</h1>
+		<div class="reqForm">
+			Username:<br>
+			<input type="text" ng-model="newReq.username"><br>
+
+			Subject:<br>
+			<input type="text" ng-model="newReq.subject"><br>
+
+			Message:<br>
+			<textarea ng-model="newReq.message" rows="4" cols="80">Type here your request!</textarea><br>
+
+			<button ng-click="submitReq()" >Submit</button> 
+
+		</div>
+	</div>
+	<div ng-hide="false" class="reqForm" id="reqMsg" >
+			{{systemMessage}} - asdasdasds
+	</div>
+</body>
+</html>
+<!--Cómo hacer un try catch-->

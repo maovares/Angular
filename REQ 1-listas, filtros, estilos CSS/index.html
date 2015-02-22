@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="App">
+<head>
+<meta charset="utf-8">
+	<title>Request list</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+	<script src="controller.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-controller="FC">
+	<h3>Request list</h3>
+
+	<h5>
+
+        <label>SEARCH: </label>
+        <input type="text" ng-model="search" class="styleA"/>
+
+
+		{{"DATE:"}}
+		<select ng-model="dateList" class="styleA">			
+			<option value="-date">Newest</option>
+    		<option value="date">Oldest</option>
+		</select>
+	</h5>
+
+	<ul ng-repeat="request in requests |filter:search|orderBy:dateList" class="a">
+
+		<h3 style="font-family:courier">{{request.username}}  - {{request.date}} </h3>
+		<strong>{{request.subject}}</strong> : {{request.message}}
+
+	</ul>
+
+</body>
+</html>
